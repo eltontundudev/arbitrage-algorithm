@@ -1,6 +1,5 @@
 import ccxt
 from twilio.rest import Client
-import math
 
 #kraken api- add your api keys below
 kraken = ccxt.kraken({
@@ -40,7 +39,6 @@ kraken_fees = kraken.markets['BTC/USD']['maker']
 
 bitrex_fees = bittrex.markets['BTC/USD']['maker']
 
-
 #check for arbitraging
 if kraken_price < bitrex_price:
 	cross_exchange_arbitrage = (bitrex_price - kraken_price)/100
@@ -70,14 +68,12 @@ else:
 
             )
 
-
 print("Cross Exchange Opportunity:",  buy, "your gain is: $", math.floor(gain))
 print("Bittrex price is:", kraken_price,"---", "Kraken price is:", bitrex_price)
 print("You arbitrage:", "{:.2f}".format(cross_exchange_arbitrage), "%")
 printsep()  
 
 # Here we start the code for buying and selling on a single exchange. Thresholdshavetobe set first as targets for trades.
-
 sell_bitcoin_threshold = 19300 # change to the one you want
 buy_bitcoin_threshold = 19045  #change to the one you want
 
