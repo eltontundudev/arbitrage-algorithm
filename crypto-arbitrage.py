@@ -1,5 +1,6 @@
 import ccxt
 from twilio.rest import Client
+import math
 
 #kraken api- add your api keys below
 kraken = ccxt.kraken({
