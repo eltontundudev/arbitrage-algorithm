@@ -66,7 +66,6 @@ else:
             	body="Buy Bitcoin  on Bittrex @ " + str(kraken_price) + " and sell on Kraken @ " + str(bitrex_price) + " Arbitrage: " +  "{:.2f}".format(cross_exchange_arbitrage) + "%",
             	from_= '+1*****',   #add your twilio number
                 to= '+*******',     #add your cellnumber to receive sms
-
             )
 
 print("Cross Exchange Opportunity:",  buy, "your gain is: $", math.floor(gain))
@@ -74,7 +73,7 @@ print("Bittrex price is:", kraken_price,"---", "Kraken price is:", bitrex_price)
 print("You arbitrage:", "{:.2f}".format(cross_exchange_arbitrage), "%")
 printsep()  
 
-# Here we start the code for buying and selling on a single exchange. Thresholdshavetobe set first as targets for trades.
+# Here we start the code for buying and selling on a single exchange. Thresholds have to be set first as targets for trades.
 sell_bitcoin_threshold = 19300 # change to the one you want
 buy_bitcoin_threshold = 19045  #change to the one you want
 
