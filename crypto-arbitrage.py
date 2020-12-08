@@ -52,8 +52,8 @@ if kraken_price < bitrex_price:
 	message = client.messages \
 	.create(
                 body="Buy Bitcoin on Kraken @ " + str(kraken_price) + " and sell on Bitrex @ " + str(bitrex_price) + " Arbitrage: " +  "{:.2f}".format(cross_exchange_arbitrage) + "%",
-                from_= '+18039326995',
-                to= '+27613517328',
+                from_= '+1*****',   #add your twilio number
+                to= '+*******',     #add your cellnumber to receive sms
             )
 
 else:
@@ -65,8 +65,8 @@ else:
 	message = client.messages \
             .create(
             	body="Buy Bitcoin  on Bittrex @ " + str(kraken_price) + " and sell on Kraken @ " + str(bitrex_price) + " Arbitrage: " +  "{:.2f}".format(cross_exchange_arbitrage) + "%",
-            	from_= '+1*****',
-            	to= '+*******',
+            	from_= '+1*****',   #add your twilio number
+                to= '+*******',     #add your cellnumber to receive sms
 
             )
 
