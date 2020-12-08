@@ -96,3 +96,4 @@ elif bitrex_price >= sell_bitcoin_threshold:
 	
 else:
 	print("No opportunities in single exchange is presented as yet")
+
