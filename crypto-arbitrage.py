@@ -51,8 +51,8 @@ if kraken_price < bitrex_price:
 	message = client.messages \
 	.create(
                 body="Buy Bitcoin on Kraken @ " + str(kraken_price) + " and sell on Bitrex @ " + str(bitrex_price) + " Arbitrage: " +  "{:.2f}".format(cross_exchange_arbitrage) + "%",
-                from_= '+*****',   #add your twilio number
-                to= '+*******',     #add your cellnumber to receive sms
+                from_= '*****',   #add your twilio number e.g +27 00 000 0000
+                to= '*******',    #add your cellnumber to receive sms e.g +27 00 000 0000
             )
 
 else:
@@ -64,8 +64,8 @@ else:
 	message = client.messages \
             .create(
             	body="Buy Bitcoin  on Bittrex @ " + str(kraken_price) + " and sell on Kraken @ " + str(bitrex_price) + " Arbitrage: " +  "{:.2f}".format(cross_exchange_arbitrage) + "%",
-            	from_= '+*****',   #add your twilio number
-                to= '+*******',     #add your cellnumber to receive sms
+            	from_= '*****',   #add your twilio number  e.g +27 00 000 0000
+                to= '*******',    #add your cellnumber to receive sms  e.g +27 00 000 0000
             )
 
 print("Cross Exchange Opportunity: ",  buy, "your gain is: $", math.floor(gain))
