@@ -2,21 +2,21 @@ import ccxt
 from twilio.rest import Client
 import math
 
-#kraken api- add your api keys below
+#kraken api - add your api keys below
 kraken = ccxt.kraken({
     'apiKey': '*******',
     'secret': '*******',
 })
 
-#bitrex api- add your api keys below
+#bitrex api - add your api keys below
 bitrex = ccxt.bitrex({
     'apiKey': '*******',
     'secret': '*******',
 })
 
-#twilio sms api. Add your own api here
+#Twilio sms api. Add your own api here
 account_sid = '******'
-auth_token = '*****'
+auth_token = '******'
 client = Client(account_sid, auth_token)
 
 
@@ -51,8 +51,8 @@ if kraken_price < bitrex_price:
 	message = client.messages \
 	.create(
                 body="Buy Bitcoin on Kraken @ " + str(kraken_price) + " and sell on Bitrex @ " + str(bitrex_price) + " Arbitrage: " +  "{:.2f}".format(cross_exchange_arbitrage) + "%",
-                from_= '*****',   #add your twilio number e.g +27 00 000 0000
-                to= '*******',    #add your cellnumber to receive sms e.g +27 00 000 0000
+                from_= '*******',   #add your twilio number e.g +27 00 000 0000
+                to= '*******',    #add your cell number to receive sms e.g +27 00 000 0000
             )
 
 else:
@@ -64,8 +64,8 @@ else:
 	message = client.messages \
             .create(
             	body="Buy Bitcoin  on Bittrex @ " + str(kraken_price) + " and sell on Kraken @ " + str(bitrex_price) + " Arbitrage: " +  "{:.2f}".format(cross_exchange_arbitrage) + "%",
-            	from_= '*****',   #add your twilio number  e.g +27 00 000 0000
-                to= '*******',    #add your cellnumber to receive sms  e.g +27 00 000 0000
+            	from_= '*******',   #add your twilio number  e.g +27 00 000 0000
+                to= '*******',    #add your cell number to receive sms  e.g +27 00 000 0000
             )
 
 print("Cross Exchange Opportunity: ",  buy, "your gain is: $", math.floor(gain))
